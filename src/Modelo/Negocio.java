@@ -19,13 +19,17 @@ public class Negocio {
     private ArrayList<Producto> inventario;
     private ArrayList<Cliente> clientes;
 
-    public Negocio(String nombre, Admin administrador, ArrayList<Vendedor> vendedores, ArrayList<CajaRegistradora> CajasRegistradoras, ArrayList<Producto> inventario, ArrayList<Cliente> clientes) {
+    public Negocio(String nombre, Admin administrador, 
+            ArrayList<Vendedor> vendedores,  
+            ArrayList<CajaRegistradora> CajasRegistradoras, 
+            ArrayList<Producto> inventario, ArrayList<Cliente> clientes) {
+        
         this.nombre = nombre;
         this.administrador = administrador;
         this.vendedores = vendedores;
         this.CajasRegistradoras = CajasRegistradoras;
         this.inventario = inventario;
-        this.clientes = new ArrayList<>();
+        this.clientes = clientes;
         
         this.administrador.setNegocio(this);
         
@@ -82,7 +86,6 @@ public class Negocio {
     public void setClientes(ArrayList<Cliente> clientes) {
         this.clientes = clientes;
     }
-    
-    
+   
     
 }
