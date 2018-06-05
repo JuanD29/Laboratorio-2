@@ -7,6 +7,7 @@ package Modelo;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -45,9 +46,15 @@ public class ConjuntoVentas {
 
     public void HacernuevaVenta(){
         
-        Date fechaActual = new Date(118, 7, 4);
-       
-        Venta nuevaVenta = new Venta(fechaActual, caja, caja.getOperador());
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese annio, mes y dia de la venta respectivamente");
+        int annio = input.nextInt();
+        int mes = input.nextInt();
+        int dia = input.nextInt();        
+        Date fechaVenta = new Date(annio-1900, mes-1, dia);
+        
+        Venta nuevaVenta = new Venta(fechaVenta, caja, caja.getOperador());
         
         if(nuevaVenta.HacerVenta()==true){
             this.ventas.add(nuevaVenta);
